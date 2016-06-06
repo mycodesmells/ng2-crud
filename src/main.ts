@@ -5,12 +5,12 @@ import { enableProdMode } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
 
 // Application starting point
-import { AppComponent } from './app/app.component';
+import { App } from './app/app';
 
 if (process.env.ENV === 'production') {
   enableProdMode();
 }
 
-bootstrap(AppComponent, [
+bootstrap(App, [
   HTTP_PROVIDERS
 ]);
