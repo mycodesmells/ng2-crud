@@ -6,9 +6,18 @@
     </p>
     <ul>
         <li><a [routerLink]="['Create']">Create</a></li>
-        <li><a [routerLink]="['Remove']">Remove</a></li>
+        <li>Remove
+            <a [routerLink]="['Remove', 'RemoveConfirm', {id: '0'}]">
+                Item #0
+            </a>
+        </li>
         <li>Update</li>
         <li>Delete</li>
     </ul>
+
+    <p>
+        Go to Remove item no <input type="text" [(ngModel)]="removeID"><button (click)="removeItem(removeID)">Go</button>
+    </p>
+
     <router-outlet></router-outlet>
 </section>

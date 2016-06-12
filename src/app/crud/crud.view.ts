@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated'
+import { Router, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated'
 
 import { CreateView } from './create.view';
 import { RemoveView } from './remove.view';
@@ -11,10 +11,18 @@ import { RemoveView } from './remove.view';
         ROUTER_DIRECTIVES
     ]
 })
-
 @RouteConfig([
-    {path: 'create', name: 'Create', component: CreateView, useAsDefault: true},
-    {path: 'remove', name: 'Remove', component: RemoveView}
+    {path: '/create', name: 'Create', component: CreateView, useAsDefault: true},
+    {path: '/remove/...', name: 'Remove', component: RemoveView}
 ])
 export class CrudView {
+
+    constructor(private router: Router) {
+    }
+
+    removeItem(id: string) {
+        console.log(`Removing #${id}`);
+        this.router.navigate(['Remove', 'RemoveConfirm', {id: id}]);
+    }
+
 }

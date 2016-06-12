@@ -20,8 +20,10 @@ import '../styles/global.css';
 })
 
 @RouteConfig([
+    {path: '/', redirectTo: ['Intro']},
     {path: '...', name: 'Crud-Main', component: CrudView},
-    {path: '/about', name: 'About', component: AboutView}
+    {path: '/about', name: 'About', component: AboutView},
+    {path: '/intro', name: 'Intro', component: AboutView, data: {intro: true}, useAsDefault: true},
 ])
 export class App implements OnInit {
 
