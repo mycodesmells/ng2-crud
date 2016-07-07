@@ -29,6 +29,8 @@ export class App implements OnInit {
 
     ngOnInit() {
         console.log('App start load');
+
+
     }
 
 }
