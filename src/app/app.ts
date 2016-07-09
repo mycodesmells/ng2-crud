@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated'
+//import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated'
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 import { CrudView } from './crud/crud.view'
 import { AboutView } from './about/about.view'
@@ -11,20 +12,20 @@ import '../styles/global.css';
     selector: 'app',
     template: require('./app.html'),
 
-    providers: [
-        ROUTER_PROVIDERS
-    ],
+    //providers: [
+    //    ROUTER_PROVIDERS
+    //],
     directives: [
         ROUTER_DIRECTIVES
     ]
 })
 
-@RouteConfig([
-    {path: '/', redirectTo: ['Intro']},
-    {path: '...', name: 'Crud-Main', component: CrudView},
-    {path: '/about', name: 'About', component: AboutView},
-    {path: '/intro', name: 'Intro', component: AboutView, data: {intro: true}, useAsDefault: true},
-])
+//@RouteConfig([
+//    {path: '/', redirectTo: ['Intro']},
+//    {path: '...', name: 'Crud-Main', component: CrudView},
+//    {path: '/about', name: 'About', component: AboutView},
+//    {path: '/intro', name: 'Intro', component: AboutView, data: {intro: true}, useAsDefault: true},
+//])
 export class App implements OnInit {
 
     ngOnInit() {

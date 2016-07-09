@@ -7,10 +7,14 @@ import { HTTP_PROVIDERS } from '@angular/http';
 // Application starting point
 import { App } from './app/app';
 
+// Routes configuration
+import { APP_ROUTER_PROVIDERS } from './app/routes';
+
 if (process.env.ENV === 'production') {
-  enableProdMode();
+    enableProdMode();
 }
 
 bootstrap(App, [
-  HTTP_PROVIDERS
-]);
+    APP_ROUTER_PROVIDERS,
+    HTTP_PROVIDERS
+]).catch(err => console.error(err));

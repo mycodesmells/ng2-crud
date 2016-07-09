@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated'
+//import { Router, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated'
+import { Router, ROUTER_DIRECTIVES } from '@angular/router'
 import 'rxjs/Rx';
 
 import {DatabaseService} from './database/Database.service';
@@ -17,10 +18,10 @@ import { RemoveView } from './remove.view';
         DatabaseService
     ]
 })
-@RouteConfig([
-    {path: '/create', name: 'Create', component: CreateView, useAsDefault: true},
-    {path: '/remove/...', name: 'Remove', component: RemoveView}
-])
+//@RouteConfig([
+//    {path: '/create', name: 'Create', component: CreateView, useAsDefault: true},
+//    {path: '/remove/...', name: 'Remove', component: RemoveView}
+//])
 export class CrudView {
 
     constructor(private router:Router, private db:DatabaseService) {
