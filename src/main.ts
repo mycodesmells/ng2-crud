@@ -8,7 +8,7 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import { App } from './app/app';
 
 // Routes configuration
-import { APP_ROUTER_PROVIDERS } from './app/routes';
+import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 
 if (process.env.ENV === 'production') {
     enableProdMode();

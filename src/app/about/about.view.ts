@@ -11,6 +11,7 @@ export class AboutView {
     private introText: string;
 
     constructor(private route: ActivatedRoute) {
+
         route.data.subscribe(data => {
             var isIntro = data['intro'];
 
